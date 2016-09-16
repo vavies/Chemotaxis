@@ -4,13 +4,18 @@ void setup(){
 	hello = new Bacteria();
 };
 void draw(){
+	background(100,100,150);
 	hello.show();
+	hello.move();
 };
 class Bacteria{
 	int myX, myY;
 	Bacteria(){
 		myX = 250;
 		myY = 250;
+	}
+	void move(){
+		
 	}
 	void show(){
 		fill(50,50,200);
