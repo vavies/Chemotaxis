@@ -1,31 +1,29 @@
-Bacteria a;
-Bacteria b;
-void setup(){
-	size(500,500);
-	a = new Bacteria(mouseX,mouseY);
-	b = new Bacteria(200,200);
+dot fish = new dot(100,100);
+dot shark = new dot(mouseX,mouseY);
 
-};
+void setup(){
+	size(200,200);
+}
 void draw(){
-	background(100,100,150);
-	a.show();
-	a.move();
-	b.show();
-	b.move();
-};
-class Bacteria{
-	int myX, myY;
-	Bacteria(int x, int y){
-		myX = mouseX;
-		myY = mouseY;
+	background(250);
+	fish.show();
+	fish.move();
+	shark.show();
+	shark.move();
+}
+class dot{
+	int myX,myY;
+	dot(int x, int y){
+		myX = x;
+		myY = y;
 	}
 	void move(){
-		myX = mouseX + (int)(Math.random()*200-100);
-		myY = mouseY + (int)(Math.random()*200-100);
+		myX = myX +1;
+		myY = myX;
 	}
 	void show(){
-		fill((int)(Math.random()*40+30),(int)(Math.random()*90+50),(int)(Math.random()*50+100));
 		noStroke();
-		ellipse(myX,myY,10,10);
+		fill(250,0,0);
+		ellipse(myX,myY,20,20);
 	}
 };
