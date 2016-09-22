@@ -1,29 +1,28 @@
-dot fish = new dot(100,100);
-dot shark = new dot(mouseX,mouseY);
-
+int startColor = (int)(Math.random()*50+100);
+dot zeiva = new dot(200,200);
 void setup(){
-	size(200,200);
+	size(400,400);
 }
 void draw(){
-	background(250);
-	fish.show();
-	fish.move();
-	shark.show();
-	shark.move();
+	zeiva.draw();
+	zeiva.move();
+
 }
 class dot{
-	int myX,myY;
+	int myX, myY;
 	dot(int x, int y){
 		myX = x;
 		myY = y;
 	}
+	void draw(){
+		for(int i = startColor; i < 200; i= i+5){
+			fill(250);
+			strokeWeight(3);
+			stroke(10,10,i);
+			ellipse(myX,myY,10,10);
+		}
+	}
 	void move(){
 		myX = myX +1;
-		myY = myX;
 	}
-	void show(){
-		noStroke();
-		fill(250,0,0);
-		ellipse(myX,myY,20,20);
-	}
-};
+}
