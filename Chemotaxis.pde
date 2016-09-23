@@ -1,5 +1,4 @@
-int startColor = (int)(Math.random()*50+100);
-dot zeiva = new dot(200,200);
+dot zeiva = new dot();
 void setup(){
 	size(400,400);
 }
@@ -10,19 +9,19 @@ void draw(){
 }
 class dot{
 	int myX, myY;
-	dot(int x, int y){
-		myX = x;
-		myY = y;
+	dot(){
+		myX = (int)(Math.random()*200+100);
+		myY = (int)(Math.random()*200+100);
 	}
 	void draw(){
-		for(int i = startColor; i < 200; i= i+5){
+	for( int b = 50; b<250; b++){	
 			fill(250);
-			strokeWeight(3);
-			stroke(10,10,i);
+			stroke(b,(int)(Math.random()*100+45),b);
 			ellipse(myX,myY,10,10);
-		}
+	}
 	}
 	void move(){
-		myX = myX +1;
+		myX = myX + (int)(Math.random()*5-3);
+		myY = myY + (int)(Math.random()*5-2);
 	}
 }
