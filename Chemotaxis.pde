@@ -1,24 +1,29 @@
-dot zeiva = new dot();
+dot [] position;
 void setup(){
 	size(400,400);
+	position = new dot[100];
+	for(int i = 0; i < position.length; i++){
+		position[i] = new dot();
+	}
 }
 void draw(){
-	zeiva.draw();
-	zeiva.move();
+	for(int i = 0; i<position.length; i++){
+		position[i].draw();
+		position[i].move();
+	}
 
 }
 class dot{
 	int myX, myY;
 	dot(){
-		myX = (int)(Math.random()*200+100);
-		myY = (int)(Math.random()*200+100);
+		myX = (int)(Math.random()*50+350);
+		myY = (int)(Math.random()*50);
 	}
-	void draw(){
-	for( int b = 50; b<250; b++){	
+	void draw(){	
 			fill(250);
-			stroke(b,(int)(Math.random()*100+45),b);
+			stroke((int)(Math.random()*30+90),(int)(Math.random()*40+130),(int)(Math.random()*100+120));
 			ellipse(myX,myY,10,10);
-	}
+
 	}
 	void move(){
 		myX = myX + (int)(Math.random()*5-3);
